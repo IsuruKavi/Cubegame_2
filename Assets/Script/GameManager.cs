@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
    public GameObject completeLevelUI;
    public GameObject gameOverUI;
    public GameObject scoreUI;
-   
+  
    
    
    public void EndGame()

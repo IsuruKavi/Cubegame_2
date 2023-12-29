@@ -16,23 +16,30 @@ public class PlayerScirpt : MonoBehaviour
     public Score Score;
 
     public float speed;
+    public CountDown countDown;
+    public GameObject scoreUI;
 
     
     // Start is called before the first frame update
     void Start()
     {
         playerRb=GetComponent<Rigidbody>();
+        scoreUI.SetActive(false);
+        
         
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (gameover == false)
+        if (countDown.countOver == true)
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            
-            TouchControll();
+            if (gameover == false)
+            {
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+                TouchControll();
+            }
         }
     }
 
