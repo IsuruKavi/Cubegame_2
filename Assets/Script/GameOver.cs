@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Quit()

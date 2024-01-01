@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+    public  GameObject selectLevelUI;
     // Start is called before the first frame update
-    public void StartGame()
+    public void SelectLevel()
     {
-        Debug.Log("Start");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Play");
+        
+        selectLevelUI.SetActive(true);
+        
     }
 }

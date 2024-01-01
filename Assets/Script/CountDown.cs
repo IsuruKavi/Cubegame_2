@@ -10,6 +10,7 @@ public class CountDown : MonoBehaviour
 {
    public int countDownTime;
    public TMP_Text countdownDisplay;
+   public TMP_Text levelDisplay;
    public bool countOver = false;
    public GameObject score;
    
@@ -21,6 +22,8 @@ public class CountDown : MonoBehaviour
 
    IEnumerator CountdownToStart()
    {
+      yield return new WaitForSeconds(1f);
+      levelDisplay.gameObject.SetActive(false);
       while (countDownTime>0)
       {
          countdownDisplay.text = countDownTime.ToString();

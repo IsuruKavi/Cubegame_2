@@ -34,7 +34,7 @@ public class PlayerScirpt : MonoBehaviour
     {
         if (countDown.countOver == true)
         {
-            if (gameover == false)
+            if (gameover == false && pauseBtn == false) ;
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
@@ -87,9 +87,6 @@ public class PlayerScirpt : MonoBehaviour
             Debug.Log("Enemy");
             gameover = true;
             GameManager.EndGame();
-           
-            
-    
         }
     }
 
