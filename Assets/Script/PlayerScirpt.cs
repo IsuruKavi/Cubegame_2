@@ -9,7 +9,7 @@ public class PlayerScirpt : MonoBehaviour
     private Rigidbody playerRb;
     private float touchspeed =0.01f;
     private Touch touch;
-    public bool gameover = false;
+    public bool gameEnd=false ;
     public GameManager GameManager;
     private float xrange=9.41f;
     
@@ -18,6 +18,7 @@ public class PlayerScirpt : MonoBehaviour
     public float speed;
     public CountDown countDown;
     public GameObject scoreUI;
+    
 
     
     // Start is called before the first frame update
@@ -26,7 +27,8 @@ public class PlayerScirpt : MonoBehaviour
         playerRb=GetComponent<Rigidbody>();
         scoreUI.SetActive(false);
         
-        
+
+
     }
 
     // Update is called once per frame
@@ -34,11 +36,12 @@ public class PlayerScirpt : MonoBehaviour
     {
         if (countDown.countOver == true)
         {
-            if (gameover == false && pauseBtn == false) ;
+            if (gameEnd == false)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
                 TouchControll();
+                
             }
         }
     }
@@ -85,29 +88,30 @@ public class PlayerScirpt : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyObs"))
         {
             Debug.Log("Enemy");
-            gameover = true;
+            gameEnd = true;
             GameManager.EndGame();
+            
         }
     }
 
-    private void OnCollisionEnter(UnityEngine.Collision other)
-    {
-        if (other.gameObject.CompareTag("FriendObs"))
-        {
-            
-            Destroy(other.gameObject);
-            Score.AddScore();
-            
-            
-        }
-        if (other.gameObject.CompareTag("EnemyObs"))
-        {
-            Debug.Log("Enemy");
-            gameover = true;
-            GameManager.EndGame();
-            
-
-        }
-        
-    }
+    // private void OnCollisionEnter(UnityEngine.Collision other)
+    // {
+    //     if (other.gameObject.CompareTag("FriendObs"))
+    //     {
+    //         
+    //         Destroy(other.gameObject);
+    //         Score.AddScore();
+    //         
+    //         
+    //     }
+    //     if (other.gameObject.CompareTag("EnemyObs"))
+    //     {
+    //         Debug.Log("Enemy");
+    //         gameover = true;
+    //         GameManager.EndGame();
+    //         
+    //
+    //     }
+    //     
+    // }
 }

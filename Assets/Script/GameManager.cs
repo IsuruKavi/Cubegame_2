@@ -9,15 +9,17 @@ public class GameManager : MonoBehaviour
    public GameObject completeLevelUI;
    public GameObject gameOverUI;
    public GameObject scoreUI;
+   public GameObject pauseBtnUI;
   
    
    
    public void EndGame()
    {
-      Debug.Log("GameOver");
+      
       LoadGameOVerUI();
-      
-      
+      pauseBtnUI.SetActive(false);
+
+
    }
 
 

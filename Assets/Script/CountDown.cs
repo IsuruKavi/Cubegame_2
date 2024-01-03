@@ -13,10 +13,11 @@ public class CountDown : MonoBehaviour
    public TMP_Text levelDisplay;
    public bool countOver = false;
    public GameObject score;
+   public GameObject pauseMenu;
    
 
    private void Start()
-   {  
+   {  pauseMenu.SetActive(false);
       StartCoroutine(CountdownToStart());
    }
 
@@ -35,9 +36,11 @@ public class CountDown : MonoBehaviour
       yield return new WaitForSeconds(1f);
       countdownDisplay.gameObject.SetActive(false);
 
-      countOver = true;
+      
       score.SetActive(true);
+      pauseMenu.SetActive(true);
       gameObject.SetActive(false);
+      countOver = true;
       
       
       
