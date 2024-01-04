@@ -1,6 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!114 &-8879112553259061898
+=======
+--- !u!114 &-7853117912609095848
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179fc3111e144bc4688dca4038b3265d, type: 3}
+  m_Name: Android Settings
+  m_EditorClassIdentifier: 
+  m_LoaderManagerInstance: {fileID: -2611289865123538499}
+  m_InitManagerOnStart: 1
+--- !u!114 &-2611289865123538499
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,8 +33,12 @@ MonoBehaviour:
   m_AutomaticLoading: 0
   m_AutomaticRunning: 0
   m_Loaders:
+<<<<<<< Updated upstream
   - {fileID: 11400000, guid: 3d6041ba8aa4c404dbcb5dcc2bef2175, type: 2}
   - {fileID: 11400000, guid: 497aca2a92091b54595975013958ab05, type: 2}
+=======
+  - {fileID: 11400000, guid: 164ebd713c3092b45960760805eea0dc, type: 2}
+>>>>>>> Stashed changes
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -31,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Keys: 07000000
   Values:
+<<<<<<< Updated upstream
   - {fileID: 2869655930368420934}
 --- !u!114 &2869655930368420934
 MonoBehaviour:
@@ -46,3 +69,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LoaderManagerInstance: {fileID: -8879112553259061898}
   m_InitManagerOnStart: 1
+=======
+  - {fileID: -7853117912609095848}
+>>>>>>> Stashed changes

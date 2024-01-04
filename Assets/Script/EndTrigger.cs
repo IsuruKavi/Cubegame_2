@@ -7,7 +7,7 @@ public class EndTrigger : MonoBehaviour
 {
    public GameManager gameManager;
    public GameObject pauseBtn;
-   private int levelValue;
+    public LevelControlScript levelControlScript;
 
 
 
@@ -15,23 +15,15 @@ public class EndTrigger : MonoBehaviour
    {
       gameManager.completeLevel();
       pauseBtn.SetActive(false);
-      levelValue++;
-      SetLevel(levelValue);
-      Debug.Log(GetLevel());
+       levelControlScript.youWin();
+      
+      
 
 
    }
 
    
-      public void SetLevel( int Value)
-      {
-         PlayerPrefs.SetInt("Level", 1);
-      }
-
-      public int GetLevel()
-      {
-         return PlayerPrefs.GetInt("Level");
-      }
+     
    
    
 

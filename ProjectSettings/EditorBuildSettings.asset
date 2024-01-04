@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: da11440b6d9e7844685b61448918b14e
   - enabled: 1
     path: Assets/Scenes/Level_1.unity
-    guid: c850ee8c3b14cc8459e7e186857cf567
+    guid: e9079b03a9a0bc44e9aa45c03dbb0ce2
   - enabled: 1
     path: Assets/Scenes/Level_2.unity
     guid: c9e513be36d832342ab3a13143fe8f37
@@ -30,14 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 5556be5a298328146a6bc397bf87336c
   - enabled: 1
-    path: Assets/Scenes/StartGame.unity
-    guid: c5496acfc8f82aa45907af3df3791e4b
-  m_configObjects:
-    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
-      guid: dc1924820d258434f8571755a1565752, type: 2}
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: a20cb05dbd875954c81c1a80562c78c6,
-      type: 2}
-    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
-      guid: d1107ad1ecc3d884f99705645ec1ad31, type: 2}
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
-      guid: eacc5048206aff84e81997d90b0fbdba, type: 2}
+    path: Assets/Scenes/LevelSelect.unity
+    guid: e79904132d16fc54d893a2167aabb048
+  m_configObjects: {}
