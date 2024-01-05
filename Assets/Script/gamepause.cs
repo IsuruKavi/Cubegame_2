@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 public class gamepause : MonoBehaviour
 {
     public GameObject conBtn;
@@ -17,5 +13,6 @@ public class gamepause : MonoBehaviour
         Time.timeScale = 1f;
         conBtn.SetActive(false);
         countActive.SetActive(true);
+        
     }
 }

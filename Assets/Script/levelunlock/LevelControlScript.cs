@@ -1,18 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelControlScript : MonoBehaviour {
 
-	//public static LevelControlScript instance = null;
-	
-	int sceneIndex, levelPassed;
-
-	// Use this for initialization
-	
-
+	int sceneIndex, levelPassed; 
 	public void youWin()
 	{
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -20,10 +11,4 @@ public class LevelControlScript : MonoBehaviour {
         if (levelPassed < sceneIndex)
 				PlayerPrefs.SetInt ("LevelPassed", sceneIndex);	
 	}
-
-	
-
-	
-
-	
 }

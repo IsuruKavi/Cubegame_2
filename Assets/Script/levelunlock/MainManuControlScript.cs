@@ -19,24 +19,22 @@ public class MainManuControlScript : MonoBehaviour {
         switch (levelPassed) {
 		case 1:
 			level02Button.interactable = true;
-			break;
+			    break;
 		case 2:
 			level02Button.interactable = true;
 			level03Button.interactable = true;
-			break;
+			    break;
         case 3:
             level02Button.interactable = true;
             level03Button.interactable = true;
             level04Button.interactable = true;
                 break;
         case 4:
-                level02Button.interactable = true;
-                level03Button.interactable = true;
-                level04Button.interactable = true;
-                level05Button.interactable = true;
+	        level02Button.interactable = true;
+	        level03Button.interactable = true;
+	        level04Button.interactable = true;
+	        level05Button.interactable = true;
                 break;
-        
-
         }
 	}
 	

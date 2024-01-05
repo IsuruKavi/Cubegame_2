@@ -1,24 +1,23 @@
-
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class CountDown : MonoBehaviour
 {
    public int countDownTime;
    public TMP_Text countdownDisplay;
    public TMP_Text levelDisplay;
-   public bool countOver = false;
    public GameObject score;
    public GameObject pauseMenu;
+   public PlayerScirpt playerScirpt;
    
 
    private void Start()
-   {  pauseMenu.SetActive(false);
+   { 
       StartCoroutine(CountdownToStart());
+      playerScirpt.countOver = false;
+      pauseMenu.SetActive(false);
    }
 
    IEnumerator CountdownToStart()
@@ -40,7 +39,7 @@ public class CountDown : MonoBehaviour
       score.SetActive(true);
       pauseMenu.SetActive(true);
       gameObject.SetActive(false);
-      countOver = true;
+      playerScirpt.countOver = true;
       
       
       

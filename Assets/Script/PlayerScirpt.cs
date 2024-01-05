@@ -12,12 +12,11 @@ public class PlayerScirpt : MonoBehaviour
     public bool gameEnd=false ;
     public GameManager GameManager;
     private float xrange=9.41f;
-    
     public Score Score;
-
     public float speed;
     public CountDown countDown;
     public GameObject scoreUI;
+    public bool countOver = false;
     
 
     
@@ -26,22 +25,17 @@ public class PlayerScirpt : MonoBehaviour
     {
         playerRb=GetComponent<Rigidbody>();
         scoreUI.SetActive(false);
-        
-
-
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (countDown.countOver == true)
-        {
+        if (countOver == true)
+        { 
             if (gameEnd == false)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
                 TouchControll();
-                
             }
         }
     }
@@ -70,48 +64,22 @@ public class PlayerScirpt : MonoBehaviour
                 }
             }
         }
-        
-      
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("FriendObs"))
-        {
-            
+        { 
             Destroy(other.gameObject);
             Score.AddScore();
-            
-            
         }
         if (other.gameObject.CompareTag("EnemyObs"))
         {
             Debug.Log("Enemy");
             gameEnd = true;
             GameManager.EndGame();
-            
         }
     }
 
-    // private void OnCollisionEnter(UnityEngine.Collision other)
-    // {
-    //     if (other.gameObject.CompareTag("FriendObs"))
-    //     {
-    //         
-    //         Destroy(other.gameObject);
-    //         Score.AddScore();
-    //         
-    //         
-    //     }
-    //     if (other.gameObject.CompareTag("EnemyObs"))
-    //     {
-    //         Debug.Log("Enemy");
-    //         gameover = true;
-    //         GameManager.EndGame();
-    //         
-    //
-    //     }
-    //     
-    // }
+    
 }
