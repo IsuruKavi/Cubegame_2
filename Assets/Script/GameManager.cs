@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
    {
       Debug.Log("LevelComplete");
       completeLevelUI.SetActive(true);
-      Invoke("LoadNextScene",1f);
+      Invoke("LoadNextScene",3f);
       
    }
 

@@ -12,12 +12,17 @@ public class CountDown : MonoBehaviour
    public GameObject pauseMenu;
    public PlayerScirpt playerScirpt;
    
+   
 
    private void Start()
-   { 
+   {
+      Time.timeScale = 1f;
       StartCoroutine(CountdownToStart());
       playerScirpt.countOver = false;
       pauseMenu.SetActive(false);
+      
+      
+
    }
 
    IEnumerator CountdownToStart()

@@ -40,6 +40,8 @@ public class MainManuControlScript : MonoBehaviour {
 	
 	public void levelToLoad (int level)
 	{
+		Time.timeScale = 1f;
+		FindObjectOfType<AudioManager>().Play("TapPauseMenu");
 		SceneManager.LoadScene (level);
 	}
 
@@ -49,11 +51,13 @@ public class MainManuControlScript : MonoBehaviour {
 		level03Button.interactable = false;
         level04Button.interactable = false;
         level05Button.interactable = false;
+        FindObjectOfType<AudioManager>().Play("TapPauseMenu");
         PlayerPrefs.DeleteAll ();
 	}
 
 	public void Back()
 	{
 		SceneManager.LoadScene(0);
+		FindObjectOfType<AudioManager>().Play("TapPauseMenu");
 	}
 }

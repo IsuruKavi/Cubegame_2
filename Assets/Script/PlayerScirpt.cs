@@ -9,14 +9,19 @@ public class PlayerScirpt : MonoBehaviour
     private Rigidbody playerRb;
     private float touchspeed =0.01f;
     private Touch touch;
+    private float xrange=9.41f;
+    private AudioSource playerAudio;
+    
     public bool gameEnd=false ;
     public GameManager GameManager;
-    private float xrange=9.41f;
     public Score Score;
     public float speed;
     public CountDown countDown;
     public GameObject scoreUI;
     public bool countOver = false;
+    public AudioClip friendCrashSound;
+    public AudioClip enemyCrashSound;
+    
     
 
     
@@ -25,6 +30,7 @@ public class PlayerScirpt : MonoBehaviour
     {
         playerRb=GetComponent<Rigidbody>();
         scoreUI.SetActive(false);
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -72,9 +78,11 @@ public class PlayerScirpt : MonoBehaviour
         { 
             Destroy(other.gameObject);
             Score.AddScore();
+            playerAudio.PlayOneShot(friendCrashSound,1.0f);
         }
         if (other.gameObject.CompareTag("EnemyObs"))
         {
+            playerAudio.PlayOneShot(enemyCrashSound,1.0f);
             Debug.Log("Enemy");
             gameEnd = true;
             GameManager.EndGame();
