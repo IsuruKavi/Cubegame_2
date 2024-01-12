@@ -1,19 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RotateWheel : MonoBehaviour
 {
     private PlayerScirpt playerScirpt;
+    private EndTrigger endTriggerScript;
 
     private void Start()
     {
         playerScirpt = GameObject.Find("Player").GetComponent<PlayerScirpt>();
+        endTriggerScript = GameObject.Find("End").GetComponent<EndTrigger>();
     }
 
     void FixedUpdate()
-    {   if(playerScirpt.countOver==true && playerScirpt.gameEnd==false)
-        transform.Rotate(0,0,300*Time.deltaTime);
+    {   if(playerScirpt.countOver==true && playerScirpt.gameEnd==false && endTriggerScript.isFinishedGame==false)
+        transform.Rotate(0,0,-300*Time.deltaTime);
     }
 }

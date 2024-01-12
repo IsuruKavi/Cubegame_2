@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EndTrigger : MonoBehaviour
@@ -10,15 +7,18 @@ public class EndTrigger : MonoBehaviour
    public LevelControlScript levelControlScript;
    public AudioClip levelComplete;
    private AudioSource _audioSource;
+   public bool isFinishedGame = false;
 
 
 
-   private void OnTriggerEnter(Collider other)
+   public void OnTriggerEnter(Collider other)
    {
-      levelControlScript.youWin();
+      
       gameManager.completeLevel();
       pauseBtn.SetActive(false);
       PlayLevelPassSound();
+      isFinishedGame = true;
+      levelControlScript.UnlockNextLevel();
    }
 
    public void PlayLevelPassSound()

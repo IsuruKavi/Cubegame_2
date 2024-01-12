@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class PlayerScirpt : MonoBehaviour
@@ -21,6 +17,7 @@ public class PlayerScirpt : MonoBehaviour
     public bool countOver = false;
     public AudioClip friendCrashSound;
     public AudioClip enemyCrashSound;
+    private EndTrigger endTriggerScript;
     
     
 
@@ -31,6 +28,7 @@ public class PlayerScirpt : MonoBehaviour
         playerRb=GetComponent<Rigidbody>();
         scoreUI.SetActive(false);
         playerAudio = GetComponent<AudioSource>();
+        endTriggerScript = GameObject.Find("End").GetComponent<EndTrigger>();
     }
 
     // Update is called once per frame
@@ -38,7 +36,7 @@ public class PlayerScirpt : MonoBehaviour
     {
         if (countOver == true)
         { 
-            if (gameEnd == false)
+            if (gameEnd == false && endTriggerScript.isFinishedGame==false)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 TouchControll();

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,7 +31,7 @@ public class GameManager : MonoBehaviour
    {
       Debug.Log("LevelComplete");
       completeLevelUI.SetActive(true);
-      Invoke("LoadNextScene",3f);
+     
       
    }
 
